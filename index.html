@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>theBox: analyse sensitive documents with an AI that stays on your computer</title>
-<meta name="description" content="theBox (DocAnalyze) is a desktop app that reads your documents, does the calculations and writes the report with a language model that runs entirely on your own computer. Free download for Linux and macOS.">
+<meta name="description" content="theBox is a desktop app that reads your documents, does the calculations and writes the report with a language model that runs entirely on your own computer. Free download for Linux and macOS.">
 <style>
 :root{--bg:#fafaf7;--card:#fff;--ink:#17191c;--mute:#5b6470;--line:#e4e4de;--accent:#1f5eff;--accent-ink:#fff;--warn-bg:#fff6e0;--warn-line:#e9c46a;--code:#f0f0ea}
 @media(prefers-color-scheme:dark){:root{--bg:#101215;--card:#171a1f;--ink:#eceef1;--mute:#98a1ad;--line:#272c33;--accent:#6b97ff;--accent-ink:#0b0d10;--warn-bg:#2a2412;--warn-line:#7a6320;--code:#1e2228}}
@@ -99,32 +99,32 @@ a{color:var(--accent)}
   <table>
     <thead><tr><th>Your system</th><th>File</th></tr></thead>
     <tbody class="dl">
-      <tr><td>Linux, Debian or Ubuntu</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/DocAnalyze-0.1.0-linux-amd64.deb">DocAnalyze-0.1.0-linux-amd64.deb</a></td></tr>
-      <tr><td>Linux, any distribution</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/DocAnalyze-0.1.0-linux-x86_64.AppImage">DocAnalyze-0.1.0-linux-x86_64.AppImage</a></td></tr>
-      <tr><td>Mac with Apple Silicon (M1 and later)</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/DocAnalyze-0.1.0-mac-arm64.zip">DocAnalyze-0.1.0-mac-arm64.zip</a></td></tr>
-      <tr><td>Mac with an Intel chip</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/DocAnalyze-0.1.0-mac-x64.zip">DocAnalyze-0.1.0-mac-x64.zip</a></td></tr>
+      <tr><td>Linux, Debian or Ubuntu</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/theBox-0.1.0-linux-amd64.deb">theBox-0.1.0-linux-amd64.deb</a></td></tr>
+      <tr><td>Linux, any distribution</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/theBox-0.1.0-linux-x86_64.AppImage">theBox-0.1.0-linux-x86_64.AppImage</a></td></tr>
+      <tr><td>Mac with Apple Silicon (M1 and later)</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/theBox-0.1.0-mac-arm64.zip">theBox-0.1.0-mac-arm64.zip</a></td></tr>
+      <tr><td>Mac with an Intel chip</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/theBox-0.1.0-mac-x64.zip">theBox-0.1.0-mac-x64.zip</a></td></tr>
     </tbody>
   </table>
   <p style="color:var(--mute);font-size:15.5px">The files are large (180 to 550 MB) because they include the engines for several graphics cards. They do not include a language model. Windows is planned but not available yet.</p>
 
   <h3 style="margin-top:22px">Install on Linux</h3>
-  <pre><code>sudo apt install ./DocAnalyze-0.1.0-linux-amd64.deb
+  <pre><code>sudo apt install ./theBox-0.1.0-linux-amd64.deb
 # or the AppImage:
-chmod +x DocAnalyze-0.1.0-linux-x86_64.AppImage
-./DocAnalyze-0.1.0-linux-x86_64.AppImage</code></pre>
+chmod +x theBox-0.1.0-linux-x86_64.AppImage
+./theBox-0.1.0-linux-x86_64.AppImage</code></pre>
   <p style="color:var(--mute);font-size:15.5px">On Ubuntu 24.04 and later the AppImage may fail to start because of the system's sandbox restrictions; use the <code>.deb</code>, or run the AppImage with <code>--no-sandbox</code>. The app needs working Vulkan or CUDA graphics drivers (on a machine without a graphics card, install <code>mesa-vulkan-drivers</code>).</p>
 
   <h3 style="margin-top:22px">Install on macOS</h3>
   <ol class="steps">
-    <li>Unzip, then drag <b>DocAnalyze</b> into Applications.</li>
+    <li>Unzip, then drag <b>theBox</b> into Applications.</li>
     <li>The app is not signed yet, so macOS will say it is damaged. Run this once in Terminal, then open it:
-      <pre><code>xattr -cr /Applications/DocAnalyze.app</code></pre></li>
+      <pre><code>xattr -cr /Applications/theBox.app</code></pre></li>
   </ol>
 
   <h3 style="margin-top:22px">Check your download</h3>
   <p>The release includes <code>SHA256SUMS.txt</code>. Compare it with your file:</p>
-  <pre><code>sha256sum DocAnalyze-0.1.0-linux-amd64.deb     # Linux
-shasum -a 256 DocAnalyze-0.1.0-mac-arm64.zip   # macOS</code></pre>
+  <pre><code>sha256sum theBox-0.1.0-linux-amd64.deb     # Linux
+shasum -a 256 theBox-0.1.0-mac-arm64.zip   # macOS</code></pre>
 </section>
 
 <section id="models">
@@ -149,7 +149,7 @@ shasum -a 256 DocAnalyze-0.1.0-mac-arm64.zip   # macOS</code></pre>
 </section>
 </main>
 
-<footer>theBox (the app is named DocAnalyze) by Opaq. Runs offline. No analytics or tracking on this page.</footer>
+<footer>theBox by Opaq. Runs offline. No analytics or tracking on this page.</footer>
 </div>
 </body>
 </html>
