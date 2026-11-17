@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>theBox: analyse sensitive documents with an AI that stays on your computer</title>
+<meta name="description" content="theBox (DocAnalyze) is a desktop app that reads your documents, does the calculations and writes the report with a language model that runs entirely on your own computer. Free download for Linux and macOS.">
+<style>
+:root{--bg:#fafaf7;--card:#fff;--ink:#17191c;--mute:#5b6470;--line:#e4e4de;--accent:#1f5eff;--accent-ink:#fff;--warn-bg:#fff6e0;--warn-line:#e9c46a;--code:#f0f0ea}
+@media(prefers-color-scheme:dark){:root{--bg:#101215;--card:#171a1f;--ink:#eceef1;--mute:#98a1ad;--line:#272c33;--accent:#6b97ff;--accent-ink:#0b0d10;--warn-bg:#2a2412;--warn-line:#7a6320;--code:#1e2228}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+header.top{padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-weight:700;font-size:19px;letter-spacing:-.01em}
+nav a{color:var(--mute);text-decoration:none;margin-left:18px;font-size:15px}
+nav a:hover{color:var(--ink)}
+.hero{padding:56px 0 36px}
+h1{font-size:clamp(30px,5.5vw,46px);line-height:1.12;letter-spacing:-.02em;margin:0 0 18px}
+.lede{font-size:20px;color:var(--mute);max-width:660px;margin:0 0 28px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:12px 20px;border-radius:9px;text-decoration:none;font-weight:600;margin:0 10px 10px 0}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+section{padding:34px 0;border-top:1px solid var(--line)}
+h2{font-size:25px;letter-spacing:-.01em;margin:0 0 14px}
+h3{font-size:17px;margin:0 0 4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card p{margin:0;color:var(--mute);font-size:15.5px}
+ol.steps{padding-left:22px}ol.steps li{margin:8px 0}
+table{width:100%;border-collapse:collapse;font-size:15.5px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:10px 14px;text-align:left;border-top:1px solid var(--line);vertical-align:top}
+thead th{border-top:0;color:var(--mute);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+code{background:var(--code);padding:1px 6px;border-radius:5px}
+pre{background:var(--code);padding:12px 14px;border-radius:9px;overflow-x:auto;margin:8px 0}
+pre code{padding:0;background:none}
+.note{background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:12px;padding:14px 18px;margin:18px 0}
+.note b{display:block;margin-bottom:4px}
+.dl a{color:var(--accent);font-weight:600}
+footer{padding:30px 0 50px;color:var(--mute);font-size:14.5px;border-top:1px solid var(--line)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <span class="brand">theBox</span>
+  <nav aria-label="Main"><a href="#what">What it is</a><a href="#privacy">Privacy</a><a href="#download">Download</a><a href="#honest">Limits</a></nav>
+</header>
+
+<main>
+<div class="hero">
+  <h1>Analyse sensitive documents with an AI that never leaves your computer.</h1>
+  <p class="lede">theBox reads your reports, spreadsheets and statements, does the calculations and writes the findings, using a language model that runs on your own machine. No account, no cloud, no upload.</p>
+  <a class="btn" href="#download">Download for Linux or macOS</a>
+  <a class="btn alt" href="#privacy">How your data is protected</a>
+</div>
+
+<section id="what">
+  <h2>What it is</h2>
+  <p>Many documents cannot be pasted into an online chatbot: audited accounts, client statements, contracts, internal reports. theBox is a desktop app built for exactly that work. You point it at a folder of documents, ask a question in plain language, and a local AI agent reads the files, computes the numbers with real code and produces an answer or a report.</p>
+  <div class="grid" style="margin-top:18px">
+    <div class="card"><h3>Reads your documents</h3><p>PDF, Word, Excel, CSV and plain text. Long reports are read page by page, so nothing is skipped.</p></div>
+    <div class="card"><h3>Figures with page references</h3><p>Every number is checked against the source text, and the page it came from is attached by the app, not guessed by the model.</p></div>
+    <div class="card"><h3>Calculates, not guesses</h3><p>Ask for totals, growth rates or comparisons and the agent writes and runs a small Python script, which you can read and approve.</p></div>
+    <div class="card"><h3>Writes the report</h3><p>Charts, tables and finished reports as HTML, PDF, Excel or images, saved in your own folder.</p></div>
+  </div>
+</section>
+
+<section id="how">
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><b>Install and open.</b> On first run the app checks your computer and recommends a language model that fits it.</li>
+    <li><b>Download a model once.</b> The app asks first. This single download from Hugging Face is the only time it goes online. You can also import a model file you already have.</li>
+    <li><b>Test it.</b> The app measures how fast the model runs on your machine and tells you plainly: Fast, Usable, Slow or Not suitable, with the time to read a 20-page document.</li>
+    <li><b>Ask.</b> Drop documents into the workspace, ask your question and watch the live progress as each part is read.</li>
+  </ol>
+</section>
+
+<section id="privacy">
+  <h2>How your data is protected</h2>
+  <table>
+    <thead><tr><th>Protection</th><th>How it works</th></tr></thead>
+    <tbody>
+      <tr><td>Nothing leaves the machine</td><td>The model runs inside the app. Every network request from the app window is blocked, and the agent has no web tool.</td></tr>
+      <tr><td>Your files stay unchanged</td><td>The agent can read your input folder but cannot write to it. It writes only to an output folder and a scripts folder, and attempts to escape them are rejected.</td></tr>
+      <tr><td>You approve code</td><td>The agent runs a script only after you allow it. On Linux scripts also run with no network access at all.</td></tr>
+      <tr><td>Numbers are checked</td><td>A figure that does not literally appear in the source page is dropped before it can reach the answer.</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:14px;color:var(--mute);font-size:15.5px">Not yet done, and worth knowing: on macOS scripts are not network-isolated (you approve each one), approved scripts can write anywhere your user account can, and downloaded model files are not checksum-verified yet.</p>
+</section>
+
+<section id="download">
+  <h2>Download</h2>
+  <p class="dl">Current version: <b>0.1.0</b> (early release). Everything is on the <a href="https://github.com/opaq-ai/getTheBox/releases/latest">releases page</a>, where you can also pick older versions.</p>
+  <table>
+    <thead><tr><th>Your system</th><th>File</th></tr></thead>
+    <tbody class="dl">
+      <tr><td>Linux, Debian or Ubuntu</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/DocAnalyze-0.1.0-linux-amd64.deb">DocAnalyze-0.1.0-linux-amd64.deb</a></td></tr>
+      <tr><td>Linux, any distribution</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/DocAnalyze-0.1.0-linux-x86_64.AppImage">DocAnalyze-0.1.0-linux-x86_64.AppImage</a></td></tr>
+      <tr><td>Mac with Apple Silicon (M1 and later)</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/DocAnalyze-0.1.0-mac-arm64.zip">DocAnalyze-0.1.0-mac-arm64.zip</a></td></tr>
+      <tr><td>Mac with an Intel chip</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/DocAnalyze-0.1.0-mac-x64.zip">DocAnalyze-0.1.0-mac-x64.zip</a></td></tr>
+    </tbody>
+  </table>
+  <p style="color:var(--mute);font-size:15.5px">The files are large (180 to 550 MB) because they include the engines for several graphics cards. They do not include a language model. Windows is planned but not available yet.</p>
+
+  <h3 style="margin-top:22px">Install on Linux</h3>
+  <pre><code>sudo apt install ./DocAnalyze-0.1.0-linux-amd64.deb
+# or the AppImage:
+chmod +x DocAnalyze-0.1.0-linux-x86_64.AppImage
+./DocAnalyze-0.1.0-linux-x86_64.AppImage</code></pre>
+  <p style="color:var(--mute);font-size:15.5px">On Ubuntu 24.04 and later the AppImage may fail to start because of the system's sandbox restrictions; use the <code>.deb</code>, or run the AppImage with <code>--no-sandbox</code>. The app needs working Vulkan or CUDA graphics drivers (on a machine without a graphics card, install <code>mesa-vulkan-drivers</code>).</p>
+
+  <h3 style="margin-top:22px">Install on macOS</h3>
+  <ol class="steps">
+    <li>Unzip, then drag <b>DocAnalyze</b> into Applications.</li>
+    <li>The app is not signed yet, so macOS will say it is damaged. Run this once in Terminal, then open it:
+      <pre><code>xattr -cr /Applications/DocAnalyze.app</code></pre></li>
+  </ol>
+
+  <h3 style="margin-top:22px">Check your download</h3>
+  <p>The release includes <code>SHA256SUMS.txt</code>. Compare it with your file:</p>
+  <pre><code>sha256sum DocAnalyze-0.1.0-linux-amd64.deb     # Linux
+shasum -a 256 DocAnalyze-0.1.0-mac-arm64.zip   # macOS</code></pre>
+</section>
+
+<section id="models">
+  <h2>Which model should I use?</h2>
+  <table>
+    <thead><tr><th>Your computer</th><th>Model</th></tr></thead>
+    <tbody>
+      <tr><td>8 GB memory, no graphics card</td><td>Qwen2.5 3B: fast, but makes arithmetic mistakes. Treat its numbers as drafts.</td></tr>
+      <tr><td>16 GB memory (most laptops)</td><td><b>Qwen2.5 7B</b>: the smallest model that reliably recovers from its own errors.</td></tr>
+      <tr><td>24 GB+ with an NVIDIA graphics card or Apple Silicon</td><td>Qwen2.5 14B: clearly better analysis.</td></tr>
+      <tr><td>32 GB+ with a strong graphics card</td><td>Qwen2.5 32B: the best quality offered.</td></tr>
+    </tbody>
+  </table>
+  <p style="color:var(--mute);font-size:15.5px">The app picks for you and tests the result. Speed depends mostly on memory bandwidth: on a laptop with integrated graphics, a 20-page report took roughly 3 to 14 minutes with the 7B model.</p>
+</section>
+
+<section id="honest">
+  <h2>Honest limits</h2>
+  <div class="note"><b>This is an early release.</b>
+    The Linux build has been run end to end. The macOS builds were assembled on Linux and have <b>not yet been run on a real Mac</b>. Neither platform's installer is code-signed. Scanned PDFs (images of pages) are not supported yet because there is no text recognition. A local model can still be wrong, so review anything that matters.</div>
+  <p>Found a problem, especially on a Mac? Please <a href="https://github.com/opaq-ai/getTheBox/issues">open an issue</a> and say which system you use. Do not attach sensitive documents.</p>
+</section>
+</main>
+
+<footer>theBox (the app is named DocAnalyze) by Opaq. Runs offline. No analytics or tracking on this page.</footer>
+</div>
+</body>
+</html>
