@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>theBox: analyse sensitive documents with an AI that stays on your computer</title>
-<meta name="description" content="theBox is a desktop app that reads your documents, does the calculations and writes the report with a language model that runs entirely on your own computer. Free download for Linux and macOS.">
+<title>theBox: analyse sensitive documents with an AI on your own computer</title>
+<meta name="description" content="theBox is a desktop app that reads your documents, does the calculations and writes the report with a language model that runs on your own computer by default. Free download for Linux and macOS.">
 <style>
 :root{--bg:#fafaf7;--card:#fff;--ink:#17191c;--mute:#5b6470;--line:#e4e4de;--accent:#1f5eff;--accent-ink:#fff;--warn-bg:#fff6e0;--warn-line:#e9c46a;--code:#f0f0ea}
 @media(prefers-color-scheme:dark){:root{--bg:#101215;--card:#171a1f;--ink:#eceef1;--mute:#98a1ad;--line:#272c33;--accent:#6b97ff;--accent-ink:#0b0d10;--warn-bg:#2a2412;--warn-line:#7a6320;--code:#1e2228}}
@@ -52,8 +52,8 @@ a{color:var(--accent)}
 
 <main>
 <div class="hero">
-  <h1>Analyse sensitive documents with an AI that never leaves your computer.</h1>
-  <p class="lede">theBox reads your reports, spreadsheets and statements, does the calculations and writes the findings, using a language model that runs on your own machine. No account, no cloud, no upload.</p>
+  <h1>Analyse sensitive documents with an AI that runs on your own computer.</h1>
+  <p class="lede">theBox reads your reports, spreadsheets and statements, does the calculations and writes the findings, using a language model that runs on your own machine. By default there is no account, no cloud and no upload.</p>
   <a class="btn" href="#download">Download for Linux or macOS</a>
   <a class="btn alt" href="#privacy">How your data is protected</a>
 </div>
@@ -84,7 +84,7 @@ a{color:var(--accent)}
   <table>
     <thead><tr><th>Protection</th><th>How it works</th></tr></thead>
     <tbody>
-      <tr><td>Nothing leaves the machine</td><td>The model runs inside the app. Every network request from the app window is blocked, and the agent has no web tool.</td></tr>
+      <tr><td>Nothing leaves the machine (default)</td><td>In the default local mode the model runs inside the app. Every network request from the app window is blocked, and the agent has no web tool.</td></tr>
       <tr><td>Your files stay unchanged</td><td>The agent can read your input folder but cannot write to it. It writes only to an output folder and a scripts folder, and attempts to escape them are rejected.</td></tr>
       <tr><td>You approve code</td><td>The agent runs a script only after you allow it. On Linux scripts also run with no network access at all.</td></tr>
       <tr><td>Numbers are checked</td><td>A figure that does not literally appear in the source page is dropped before it can reach the answer.</td></tr>
@@ -93,25 +93,31 @@ a{color:var(--accent)}
   <p style="margin-top:14px;color:var(--mute);font-size:15.5px">Not yet done, and worth knowing: on macOS scripts are not network-isolated (you approve each one), approved scripts can write anywhere your user account can, and downloaded model files are not checksum-verified yet.</p>
 </section>
 
+<section id="cloud">
+  <h2>Optional: a model in your own AWS account</h2>
+  <p>If your computer is too slow for a good local model, theBox can use a model that runs in <b>your own Amazon Bedrock account</b> instead. It is off by default. The AWS account, credentials and models must be yours (or your organisation's, with your authorisation). Before it can be switched on you accept short terms with one checkbox, and the acceptance is saved on your computer.</p>
+  <p>While it is on, the text of the documents you analyse is sent to your AWS account, the app shows a clear cloud badge, and the agent is told its model is in the cloud. What happens to data there is decided by your AWS account and agreements. Files, Python scripts and reports stay on your computer either way, and you can sign in with an AWS profile or with access keys that are encrypted by your operating system's secure storage.</p>
+</section>
+
 <section id="download">
   <h2>Download</h2>
-  <p class="dl">Current version: <b>0.1.0</b> (early release). Everything is on the <a href="https://github.com/opaq-ai/getTheBox/releases/latest">releases page</a>, where you can also pick older versions.</p>
+  <p class="dl">Current version: <b>0.2.0</b> (early release). Everything is on the <a href="https://github.com/opaq-ai/getTheBox/releases/latest">releases page</a>, where you can also pick older versions.</p>
   <table>
     <thead><tr><th>Your system</th><th>File</th></tr></thead>
     <tbody class="dl">
-      <tr><td>Linux, Debian or Ubuntu</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/theBox-0.1.0-linux-amd64.deb">theBox-0.1.0-linux-amd64.deb</a></td></tr>
-      <tr><td>Linux, any distribution</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/theBox-0.1.0-linux-x86_64.AppImage">theBox-0.1.0-linux-x86_64.AppImage</a></td></tr>
-      <tr><td>Mac with Apple Silicon (M1 and later)</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/theBox-0.1.0-mac-arm64.zip">theBox-0.1.0-mac-arm64.zip</a></td></tr>
-      <tr><td>Mac with an Intel chip</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.1.0/theBox-0.1.0-mac-x64.zip">theBox-0.1.0-mac-x64.zip</a></td></tr>
+      <tr><td>Linux, Debian or Ubuntu</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.2.0/theBox-0.2.0-linux-amd64.deb">theBox-0.2.0-linux-amd64.deb</a></td></tr>
+      <tr><td>Linux, any distribution</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.2.0/theBox-0.2.0-linux-x86_64.AppImage">theBox-0.2.0-linux-x86_64.AppImage</a></td></tr>
+      <tr><td>Mac with Apple Silicon (M1 and later)</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.2.0/theBox-0.2.0-mac-arm64.zip">theBox-0.2.0-mac-arm64.zip</a></td></tr>
+      <tr><td>Mac with an Intel chip</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.2.0/theBox-0.2.0-mac-x64.zip">theBox-0.2.0-mac-x64.zip</a></td></tr>
     </tbody>
   </table>
   <p style="color:var(--mute);font-size:15.5px">The files are large (180 to 550 MB) because they include the engines for several graphics cards. They do not include a language model. Windows is planned but not available yet.</p>
 
   <h3 style="margin-top:22px">Install on Linux</h3>
-  <pre><code>sudo apt install ./theBox-0.1.0-linux-amd64.deb
+  <pre><code>sudo apt install ./theBox-0.2.0-linux-amd64.deb
 # or the AppImage:
-chmod +x theBox-0.1.0-linux-x86_64.AppImage
-./theBox-0.1.0-linux-x86_64.AppImage</code></pre>
+chmod +x theBox-0.2.0-linux-x86_64.AppImage
+./theBox-0.2.0-linux-x86_64.AppImage</code></pre>
   <p style="color:var(--mute);font-size:15.5px">On Ubuntu 24.04 and later the AppImage may fail to start because of the system's sandbox restrictions; use the <code>.deb</code>, or run the AppImage with <code>--no-sandbox</code>. The app needs working Vulkan or CUDA graphics drivers (on a machine without a graphics card, install <code>mesa-vulkan-drivers</code>).</p>
 
   <h3 style="margin-top:22px">Install on macOS</h3>
@@ -123,8 +129,8 @@ chmod +x theBox-0.1.0-linux-x86_64.AppImage
 
   <h3 style="margin-top:22px">Check your download</h3>
   <p>The release includes <code>SHA256SUMS.txt</code>. Compare it with your file:</p>
-  <pre><code>sha256sum theBox-0.1.0-linux-amd64.deb     # Linux
-shasum -a 256 theBox-0.1.0-mac-arm64.zip   # macOS</code></pre>
+  <pre><code>sha256sum theBox-0.2.0-linux-amd64.deb     # Linux
+shasum -a 256 theBox-0.2.0-mac-arm64.zip   # macOS</code></pre>
 </section>
 
 <section id="models">
@@ -144,7 +150,7 @@ shasum -a 256 theBox-0.1.0-mac-arm64.zip   # macOS</code></pre>
 <section id="honest">
   <h2>Honest limits</h2>
   <div class="note"><b>This is an early release.</b>
-    The Linux build has been run end to end. The macOS builds were assembled on Linux and have <b>not yet been run on a real Mac</b>. Neither platform's installer is code-signed. Scanned PDFs (images of pages) are not supported yet because there is no text recognition. A local model can still be wrong, so review anything that matters.</div>
+    The Linux build has been run end to end. The macOS builds were assembled on Linux and have <b>not yet been run on a real Mac</b>. Neither platform's installer is code-signed. The cloud mode has been run against one model so far. Scanned PDFs (images of pages) are not supported yet because there is no text recognition. A local model can still be wrong, so review anything that matters.</div>
   <p>Found a problem, especially on a Mac? Please <a href="https://github.com/opaq-ai/getTheBox/issues">open an issue</a> and say which system you use. Do not attach sensitive documents.</p>
 </section>
 </main>

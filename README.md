@@ -1,6 +1,6 @@
 # theBox
 
-Analyse sensitive documents with an AI that never leaves your computer. theBox reads your PDFs, Word and Excel files, does the calculations with real code and writes the report, using a language model that runs entirely on your own machine.
+Analyse sensitive documents with an AI that runs on your own computer. theBox reads your PDFs, Word and Excel files, does the calculations with real code and writes the report, using a language model that runs on your own machine. An optional mode can use a model in your own AWS Bedrock account instead (off by default; see the website).
 
 **Website:** https://opaq-ai.github.io/getTheBox/
 **Downloads:** [Releases](https://github.com/opaq-ai/getTheBox/releases/latest) (Linux `.deb` and AppImage, macOS Apple Silicon and Intel)
