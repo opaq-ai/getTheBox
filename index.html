@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>theBox: analyse sensitive documents with an AI on your own computer</title>
-<meta name="description" content="theBox is a desktop app that reads your documents, does the calculations and writes the report with a language model that runs on your own computer by default. Free download for Linux and macOS.">
+<title>theBox: a personal assistant that works on your computer and asks before it acts</title>
+<meta name="description" content="theBox is a free desktop assistant. You describe a job, it plans and does the work on your computer, and it asks before anything sensitive. Use a model on your own computer or in your own AWS account. Linux download.">
 <style>
 :root{--bg:#fafaf7;--card:#fff;--ink:#17191c;--mute:#5b6470;--line:#e4e4de;--accent:#1f5eff;--accent-ink:#fff;--warn-bg:#fff6e0;--warn-line:#e9c46a;--code:#f0f0ea}
 @media(prefers-color-scheme:dark){:root{--bg:#101215;--card:#171a1f;--ink:#eceef1;--mute:#98a1ad;--line:#272c33;--accent:#6b97ff;--accent-ink:#0b0d10;--warn-bg:#2a2412;--warn-line:#7a6320;--code:#1e2228}}
@@ -47,61 +47,99 @@ a{color:var(--accent)}
 <div class="wrap">
 <header class="top">
   <span class="brand">theBox</span>
-  <nav aria-label="Main"><a href="#what">What it is</a><a href="#privacy">Privacy</a><a href="#download">Download</a><a href="#honest">Limits</a></nav>
+  <nav aria-label="Main"><a href="#what">What it is</a><a href="#asks">How it asks</a><a href="#data">Your data</a><a href="#download">Download</a><a href="#honest">Limits</a></nav>
 </header>
 
 <main>
 <div class="hero">
-  <h1>Analyse sensitive documents with an AI that runs on your own computer.</h1>
-  <p class="lede">theBox reads your reports, spreadsheets and statements, does the calculations and writes the findings, using a language model that runs on your own machine. By default there is no account, no cloud and no upload.</p>
-  <a class="btn" href="#download">Download for Linux or macOS</a>
-  <a class="btn alt" href="#privacy">How your data is protected</a>
+  <h1>A personal assistant that works on your computer and asks before it acts.</h1>
+  <p class="lede">Describe a job in plain language. theBox plans the steps, does the work (reading your files, running code, writing the report) and stops to ask you before anything sensitive. Free to download and use. You choose the model that does the thinking.</p>
+  <a class="btn" href="#download">Download for Linux</a>
+  <a class="btn alt" href="#asks">How it asks permission</a>
 </div>
 
 <section id="what">
   <h2>What it is</h2>
-  <p>Many documents cannot be pasted into an online chatbot: audited accounts, client statements, contracts, internal reports. theBox is a desktop app built for exactly that work. You point it at a folder of documents, ask a question in plain language, and a local AI agent reads the files, computes the numbers with real code and produces an answer or a report.</p>
+  <p>theBox is a desktop app. You type what you want done, for example "summarise the three contracts in my Legal folder and list the renewal dates", and watch it work in a live timeline. Where it needs something it was not given, it asks, in the timeline, and you answer with a click.</p>
   <div class="grid" style="margin-top:18px">
-    <div class="card"><h3>Reads your documents</h3><p>PDF, Word, Excel, CSV and plain text. Long reports are read page by page, so nothing is skipped.</p></div>
-    <div class="card"><h3>Figures with page references</h3><p>Every number is checked against the source text, and the page it came from is attached by the app, not guessed by the model.</p></div>
-    <div class="card"><h3>Calculates, not guesses</h3><p>Ask for totals, growth rates or comparisons and the agent writes and runs a small Python script, which you can read and approve.</p></div>
-    <div class="card"><h3>Writes the report</h3><p>Charts, tables and finished reports as HTML, PDF, Excel or images, saved in your own folder.</p></div>
+    <div class="card"><h3>It asks nicely</h3><p>Like installing a phone app: you see what a recipe can and cannot do, and why, before you install it. Risky actions ask every time, and you can switch any permission off later.</p></div>
+    <div class="card"><h3>You choose the model</h3><p>A model on your own computer, or one in your own AWS Bedrock account. For each task you pick Local only, Redacted cloud or Cloud.</p></div>
+    <div class="card"><h3>Recipes teach it jobs</h3><p>A recipe is packaged know-how: for example analysing a company's financial statements, or running a small content business without cameras. Recipes are signed and reviewed.</p></div>
+    <div class="card"><h3>You can check what it did</h3><p>Every action is written to a tamper-evident activity log, and a screen shows what left your computer, where it went and why.</p></div>
   </div>
 </section>
 
 <section id="how">
   <h2>How it works</h2>
   <ol class="steps">
-    <li><b>Install and open.</b> On first run the app checks your computer and recommends a language model that fits it.</li>
-    <li><b>Download a model once.</b> The app asks first. This single download from Hugging Face is the only time it goes online. You can also import a model file you already have.</li>
-    <li><b>Test it.</b> The app measures how fast the model runs on your machine and tells you plainly: Fast, Usable, Slow or Not suitable, with the time to read a 20-page document.</li>
-    <li><b>Ask.</b> Drop documents into the workspace, ask your question and watch the live progress as each part is read.</li>
+    <li><b>Install and open.</b> Choose a model: one on your computer, or one in your own AWS Bedrock account.</li>
+    <li><b>Describe the job,</b> or pick a recipe and fill in its short form. Attach files by dropping them in.</li>
+    <li><b>Watch and approve.</b> The assistant shows its plan and each step. Anything beyond its own working folder asks first.</li>
+    <li><b>Collect the result</b> in the task's output folder, and reply to ask for changes.</li>
   </ol>
 </section>
 
-<section id="privacy">
-  <h2>How your data is protected</h2>
+<section id="asks">
+  <h2>How it asks permission</h2>
   <table>
     <thead><tr><th>Protection</th><th>How it works</th></tr></thead>
     <tbody>
-      <tr><td>Nothing leaves the machine (default)</td><td>In the default local mode the model runs inside the app. Every network request from the app window is blocked, and the agent has no web tool.</td></tr>
-      <tr><td>Your files stay unchanged</td><td>The agent can read your input folder but cannot write to it. It writes only to an output folder and a scripts folder, and attempts to escape them are rejected.</td></tr>
-      <tr><td>You approve code</td><td>The agent runs a script only after you allow it. On Linux scripts also run with no network access at all.</td></tr>
-      <tr><td>Numbers are checked</td><td>A figure that does not literally appear in the source page is dropped before it can reach the answer.</td></tr>
+      <tr><td>Its own folder is free, the rest asks</td><td>Each task gets a private working folder. Reading or writing anywhere else, such as Documents or Downloads, asks you first.</td></tr>
+      <tr><td>Dangerous actions ask every time</td><td>Running commands, deleting files and similar actions show you exactly what they will do, and you approve each one.</td></tr>
+      <tr><td>Some places are never available</td><td>Your SSH keys, cloud credentials, browser profiles, password stores and system folders are blocked, whatever a recipe or a prompt says.</td></tr>
+      <tr><td>Recipes cannot exceed what they declare</td><td>A recipe that did not declare a capability cannot use it. Its risk levels are worked out by theBox, not claimed by the recipe.</td></tr>
+      <tr><td>Text in documents cannot take over</td><td>After the assistant reads a document or web page, any action that could be influenced by it asks again, even if you allowed it earlier.</td></tr>
+      <tr><td>A log you can trust</td><td>The activity log is hash-chained, so editing or deleting records is detected.</td></tr>
     </tbody>
   </table>
-  <p style="margin-top:14px;color:var(--mute);font-size:15.5px">Not yet done, and worth knowing: on macOS scripts are not network-isolated (you approve each one), approved scripts can write anywhere your user account can, and downloaded model files are not checksum-verified yet.</p>
 </section>
 
-<section id="cloud">
-  <h2>Optional: a model in your own AWS account</h2>
-  <p>If your computer is too slow for a good local model, theBox can use a model that runs in <b>your own Amazon Bedrock account</b> instead. It is off by default. The AWS account, credentials and models must be yours (or your organisation's, with your authorisation). Before it can be switched on you accept short terms with one checkbox, and the acceptance is saved on your computer.</p>
-  <p>While it is on, the text of the documents you analyse is sent to your AWS account, the app shows a clear cloud badge, and the agent is told its model is in the cloud. What happens to data there is decided by your AWS account and agreements. Files, Python scripts and reports stay on your computer either way, and you can sign in with an AWS profile or with access keys that are encrypted by your operating system's secure storage.</p>
+<section id="data">
+  <h2>Your model and your data</h2>
+  <p>With a model on your computer, your task content stays on your computer. With a model in <b>your own AWS Bedrock account</b>, the text of your task is sent to that account, the app shows a clear cloud badge, and what happens to data there is decided by your AWS account and agreements. For each task you choose:</p>
+  <table>
+    <thead><tr><th>Sharing mode</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td>Local only</td><td>Cloud models are blocked for the task.</td></tr>
+      <tr><td>Redacted cloud</td><td>Identifiers the app can recognise (emails, phone numbers, account and card numbers, IDs, keys) are replaced with placeholders before anything is sent, and put back in the replies and in the files it writes. <b>It does not know people's or companies' names unless you list them</b>, so do not rely on it for anything you would not send as plain text.</td></tr>
+      <tr><td>Cloud</td><td>The text is sent as it is.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="recipes">
+  <h2>Recipes and the community (coming)</h2>
+  <p>Recipes are signed packages. Each version goes through automatic checks, an AI review that only advises, and review by volunteers from the community, with a vetted sign-off for the risky ones. A community store, membership and a way for authors to publish are being built; <b>the store is not open yet</b>, and details and prices will be announced before anything is charged. You can try a recipe from a file in developer mode.</p>
 </section>
 
 <section id="download">
   <h2>Download</h2>
-  <p class="dl">Current version: <b>0.2.1</b> (early release). Everything is on the <a href="https://github.com/opaq-ai/getTheBox/releases/latest">releases page</a>, where you can also pick older versions.</p>
+  <p class="dl">Current version: <b>0.3.0</b>. Everything is on the <a href="https://github.com/opaq-ai/getTheBox/releases/latest">releases page</a>, where you can also pick older versions.</p>
+  <table>
+    <thead><tr><th>Your system</th><th>File</th></tr></thead>
+    <tbody class="dl">
+      <tr><td>Linux, Debian or Ubuntu</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.3.0/theBox-0.3.0-linux-amd64.deb">theBox-0.3.0-linux-amd64.deb</a></td></tr>
+      <tr><td>Linux, any distribution</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.3.0/theBox-0.3.0-linux-x86_64.AppImage">theBox-0.3.0-linux-x86_64.AppImage</a></td></tr>
+      <tr><td>Mac</td><td>Not available yet. Use <a href="#older">version 0.2.1</a> below.</td></tr>
+    </tbody>
+  </table>
+  <p style="color:var(--mute);font-size:15.5px">The files are large (about 400 and 550 MB) because they include the engines for several graphics cards. They do not include a language model. Windows is planned but not available yet. 0.3.0 upgrades an installed 0.2.x and keeps your settings.</p>
+
+  <h3 style="margin-top:22px">Install on Linux</h3>
+  <pre><code>sudo apt install ./theBox-0.3.0-linux-amd64.deb
+# or the AppImage:
+chmod +x theBox-0.3.0-linux-x86_64.AppImage
+./theBox-0.3.0-linux-x86_64.AppImage</code></pre>
+  <p style="color:var(--mute);font-size:15.5px">On Ubuntu 24.04 and later the AppImage may fail to start because of the system's sandbox restrictions; use the <code>.deb</code>, or run the AppImage with <code>--no-sandbox</code>. A model on your computer needs working Vulkan or CUDA graphics drivers.</p>
+
+  <h3 style="margin-top:22px">Check your download</h3>
+  <p>The release includes <code>SHA256SUMS.txt</code>. Compare it with your file:</p>
+  <pre><code>sha256sum theBox-0.3.0-linux-amd64.deb</code></pre>
+</section>
+
+<section id="older">
+  <h2>Older version: 0.2.1 (offline document analysis, also for Mac)</h2>
+  <p>Version 0.2.1 is the earlier theBox: a tool for analysing sensitive documents with a model that runs on your own computer, with no account and no upload by default. It is the version to use on a Mac for now.</p>
   <table>
     <thead><tr><th>Your system</th><th>File</th></tr></thead>
     <tbody class="dl">
@@ -111,15 +149,6 @@ a{color:var(--accent)}
       <tr><td>Mac with an Intel chip</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.2.1/theBox-0.2.1-mac-x64.zip">theBox-0.2.1-mac-x64.zip</a></td></tr>
     </tbody>
   </table>
-  <p style="color:var(--mute);font-size:15.5px">The files are large (180 to 550 MB) because they include the engines for several graphics cards. They do not include a language model. Windows is planned but not available yet.</p>
-
-  <h3 style="margin-top:22px">Install on Linux</h3>
-  <pre><code>sudo apt install ./theBox-0.2.1-linux-amd64.deb
-# or the AppImage:
-chmod +x theBox-0.2.1-linux-x86_64.AppImage
-./theBox-0.2.1-linux-x86_64.AppImage</code></pre>
-  <p style="color:var(--mute);font-size:15.5px">On Ubuntu 24.04 and later the AppImage may fail to start because of the system's sandbox restrictions; use the <code>.deb</code>, or run the AppImage with <code>--no-sandbox</code>. The app needs working Vulkan or CUDA graphics drivers (on a machine without a graphics card, install <code>mesa-vulkan-drivers</code>).</p>
-
   <h3 style="margin-top:22px">Install on macOS</h3>
   <ol class="steps">
     <li>Unzip, then drag <b>theBox</b> into Applications.</li>
@@ -133,29 +162,21 @@ chmod +x theBox-0.2.1-linux-x86_64.AppImage
 shasum -a 256 theBox-0.2.1-mac-arm64.zip   # macOS</code></pre>
 </section>
 
-<section id="models">
-  <h2>Which model should I use?</h2>
-  <table>
-    <thead><tr><th>Your computer</th><th>Model</th></tr></thead>
-    <tbody>
-      <tr><td>8 GB memory, no graphics card</td><td>Qwen2.5 3B: fast, but makes arithmetic mistakes. Treat its numbers as drafts.</td></tr>
-      <tr><td>16 GB memory (most laptops)</td><td><b>Qwen2.5 7B</b>: the smallest model that reliably recovers from its own errors.</td></tr>
-      <tr><td>24 GB+ with an NVIDIA graphics card or Apple Silicon</td><td>Qwen2.5 14B: clearly better analysis.</td></tr>
-      <tr><td>32 GB+ with a strong graphics card</td><td>Qwen2.5 32B: the best quality offered.</td></tr>
-    </tbody>
-  </table>
-  <p style="color:var(--mute);font-size:15.5px">The app picks for you and tests the result. Speed depends mostly on memory bandwidth: on a laptop with integrated graphics, a 20-page report took roughly 3 to 14 minutes with the 7B model.</p>
-</section>
-
 <section id="honest">
   <h2>Honest limits</h2>
-  <div class="note"><b>This is an early release.</b>
-    The Linux build has been run end to end. The macOS builds were assembled on Linux and have <b>not yet been run on a real Mac</b>. Neither platform's installer is code-signed. The cloud mode has been run against one model so far. Scanned PDFs (images of pages) are not supported yet because there is no text recognition. A local model can still be wrong, so review anything that matters.</div>
-  <p>Found a problem, especially on a Mac? Please <a href="https://github.com/opaq-ai/getTheBox/issues">open an issue</a> and say which system you use. Do not attach sensitive documents.</p>
+  <div class="note"><b>Version 0.3.0 is the first release of the new assistant.</b>
+    It works end to end with a cloud model, and the permission system, activity log, task history and recipe installing are in place. The installers are not code-signed.</div>
+  <ul style="color:var(--mute);font-size:15.5px">
+    <li>The recipe store is not open yet, and the ratings, review and reviewer pages show sample data.</li>
+    <li>Models on your computer have not yet been tested in the new assistant, and the document-analysis tool from 0.2 is not connected to it.</li>
+    <li>Recipe scripts run in a Linux sandbox with no network access. There is no Mac or Windows build of 0.3.0.</li>
+    <li>"Redacted cloud" masks only identifiers it can recognise, as described above.</li>
+  </ul>
+  <p>Found a problem? Please <a href="https://github.com/opaq-ai/getTheBox/issues">open an issue</a> and say which system you use. Do not attach sensitive documents.</p>
 </section>
 </main>
 
-<footer>theBox by Opaq. Runs offline. No analytics or tracking on this page.</footer>
+<footer>theBox by Opaq. No analytics or tracking on this page.</footer>
 </div>
 </body>
 </html>
