@@ -54,6 +54,7 @@ pre{background:var(--surface-2);padding:12px 14px;border-radius:9px;overflow-x:a
 pre code{padding:0;background:none}
 .note{background:var(--warn-soft);border:1px solid var(--warn);border-radius:12px;padding:14px 18px;margin:18px 0}
 .note b{display:block;margin-bottom:4px}
+.note.ok{background:var(--surface);border-color:var(--accent)}
 .dl a{color:var(--accent-ink);font-weight:600}
 .test{display:inline-block;color:var(--warn);background:var(--warn-soft);border:1px solid var(--warn);border-radius:6px;padding:0 7px;font-size:12px;font-weight:600;margin-left:4px;white-space:nowrap}
 footer{padding:30px 0 50px;color:var(--muted);font-size:14.5px;border-top:1px solid var(--border)}
@@ -91,7 +92,7 @@ a{color:var(--accent-ink)}
     <div class="bar hi"><span>Claude Opus 5.5</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="amt">$300</span></div>
   </div>
   <p class="fine">List prices per million tokens, input / output: Kimi K2 Thinking on Bedrock $0.60 / $2.50 up to Kimi K2.5 at $0.72 / $3.60 (the range reflects model version and region); Claude Opus 5.5 $4 / $20. Totals are 50M x input + 5M x output. Prices checked November 2026 from public price trackers, not AWS's own pages, and they change: confirm in your region before you rely on them. Model fees only; the cloud options also need your own AWS account.</p>
-  <div class="note"><b>Cheaper is not the same as equal.</b>A flagship model is likely better at hard, multi-file work. theBox lets you start cheap and move one recipe to a stronger model when it needs it, without changing anything else. Our own recipe-by-recipe quality comparison is not published yet.</div>
+  <div class="note ok"><b>Try the cheap model first. Keep it if it does the job.</b>Many everyday recipes run well on low-cost open models such as Kimi. Run a recipe on the cheaper model, compare the result with a flagship if you like, and keep whichever you prefer. Switching a recipe to a different model is one setting, and nothing else changes.</div>
   <div class="grid" style="margin-top:18px">
     <div class="card"><h3>You set the ceiling</h3><p>The cloud is off until you turn it on, and you pick the model each task may use. Local-only keeps everything on your computer.</p></div>
     <div class="card"><h3>Your account, your data</h3><p>With Bedrock, prompts stay in your AWS account. AWS says it does not use them to train models and the model's maker gets no access to them.</p></div>
