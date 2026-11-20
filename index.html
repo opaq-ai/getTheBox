@@ -110,29 +110,29 @@ a{color:var(--accent)}
 
 <section id="recipes">
   <h2>Recipes and the community (coming)</h2>
-  <p>Recipes are signed packages. Each version goes through automatic checks, an AI review that only advises, and review by volunteers from the community, with a vetted sign-off for the risky ones. A community store, membership and a way for authors to publish are being built; <b>the store is not open yet</b>, and details and prices will be announced before anything is charged. You can try a recipe from a file in developer mode.</p>
+  <p>Recipes are signed packages. Each version goes through automatic checks, an AI review that only advises, and review by volunteers from the community, with a vetted sign-off for the risky ones. A community store, membership and a way for authors to publish are being built; <b>the store is not open yet</b>, and details and prices will be announced before anything is charged. You can try a recipe from a file in developer mode. In the meantime, 104 free recipes are built into theBox 0.4: <a href="recipes/">browse them with their sources</a>, then install from Discover.</p>
 </section>
 
 <section id="download">
   <h2>Download</h2>
-  <p class="dl">Current version: <b>0.3.0</b>. Everything is on the <a href="https://github.com/opaq-ai/getTheBox/releases/latest">releases page</a>, where you can also pick older versions.</p>
+  <p class="dl">Current version: <b>0.4.0</b>. Everything is on the <a href="https://github.com/opaq-ai/getTheBox/releases/latest">releases page</a>, where you can also pick older versions.</p>
   <table>
     <thead><tr><th>Your system</th><th>File</th></tr></thead>
     <tbody class="dl">
-      <tr><td>Linux, Debian or Ubuntu</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.3.0/theBox-0.3.0-linux-amd64.deb">theBox-0.3.0-linux-amd64.deb</a></td></tr>
-      <tr><td>Linux, any distribution</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.3.0/theBox-0.3.0-linux-x86_64.AppImage">theBox-0.3.0-linux-x86_64.AppImage</a></td></tr>
-      <tr><td>Mac with Apple Silicon (M1 and later) <span class="test">untested build</span></td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.3.0/theBox-0.3.0-mac-arm64.zip">theBox-0.3.0-mac-arm64.zip</a></td></tr>
-      <tr><td>Mac with an Intel chip <span class="test">untested build</span></td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.3.0/theBox-0.3.0-mac-x64.zip">theBox-0.3.0-mac-x64.zip</a></td></tr>
-      <tr><td>Windows 64-bit, portable <span class="test">untested build</span></td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.3.0/theBox-0.3.0-win-x64.zip">theBox-0.3.0-win-x64.zip</a></td></tr>
+      <tr><td>Linux, Debian or Ubuntu</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.4.0/theBox-0.4.0-linux-amd64.deb">theBox-0.4.0-linux-amd64.deb</a></td></tr>
+      <tr><td>Linux, any distribution</td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.4.0/theBox-0.4.0-linux-x86_64.AppImage">theBox-0.4.0-linux-x86_64.AppImage</a></td></tr>
+      <tr><td>Mac with Apple Silicon (M1 and later) <span class="test">untested build</span></td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.4.0/theBox-0.4.0-mac-arm64.zip">theBox-0.4.0-mac-arm64.zip</a></td></tr>
+      <tr><td>Mac with an Intel chip <span class="test">untested build</span></td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.4.0/theBox-0.4.0-mac-x64.zip">theBox-0.4.0-mac-x64.zip</a></td></tr>
+      <tr><td>Windows 64-bit, portable <span class="test">untested build</span></td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.4.0/theBox-0.4.0-win-x64.zip">theBox-0.4.0-win-x64.zip</a></td></tr>
     </tbody>
   </table>
-  <p style="color:var(--mute);font-size:15.5px">The files are large (180 to 550 MB) because they include the engines for several graphics cards. They do not include a language model. <b>Linux is the tested build.</b> The Mac and Windows builds are for testers: they were built on Linux and have never been run on a real Mac or Windows computer, and none of the builds is code-signed. 0.3.0 upgrades an installed 0.2.x on Linux and keeps your settings.</p>
+  <p style="color:var(--mute);font-size:15.5px">The files are large (180 to 550 MB) because they include the engines for several graphics cards. They do not include a language model. <b>Linux is the tested build.</b> The Mac and Windows builds are for testers: they were built on Linux and have never been run on a real Mac or Windows computer, and none of the builds is code-signed. 0.4.0 upgrades an installed 0.2.x on Linux and keeps your settings.</p>
 
   <h3 style="margin-top:22px">Install on Linux</h3>
-  <pre><code>sudo apt install ./theBox-0.3.0-linux-amd64.deb
+  <pre><code>sudo apt install ./theBox-0.4.0-linux-amd64.deb
 # or the AppImage:
-chmod +x theBox-0.3.0-linux-x86_64.AppImage
-./theBox-0.3.0-linux-x86_64.AppImage</code></pre>
+chmod +x theBox-0.4.0-linux-x86_64.AppImage
+./theBox-0.4.0-linux-x86_64.AppImage</code></pre>
   <p style="color:var(--mute);font-size:15.5px">On Ubuntu 24.04 and later the AppImage may fail to start because of the system's sandbox restrictions; use the <code>.deb</code>, or run the AppImage with <code>--no-sandbox</code>. A model on your computer needs working Vulkan or CUDA graphics drivers.</p>
 
   <h3 style="margin-top:22px">Install on macOS (testers)</h3>
@@ -151,9 +151,9 @@ chmod +x theBox-0.3.0-linux-x86_64.AppImage
 
   <h3 style="margin-top:22px">Check your download</h3>
   <p>The release includes <code>SHA256SUMS.txt</code>. Compare it with your file:</p>
-  <pre><code>sha256sum theBox-0.3.0-linux-amd64.deb       # Linux
-shasum -a 256 theBox-0.3.0-mac-arm64.zip     # macOS
-certutil -hashfile theBox-0.3.0-win-x64.zip SHA256   # Windows</code></pre>
+  <pre><code>sha256sum theBox-0.4.0-linux-amd64.deb       # Linux
+shasum -a 256 theBox-0.4.0-mac-arm64.zip     # macOS
+certutil -hashfile theBox-0.4.0-win-x64.zip SHA256   # Windows</code></pre>
 </section>
 
 <section id="older">
