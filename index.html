@@ -13,6 +13,18 @@
 <style>
 :root{color-scheme:dark;--bg:#0b0d12;--surface:#12151d;--surface-2:#1a1e29;--border:#2a3040;--text:#e9ebf2;--muted:#9ba4b8;--accent:#7062ec;--accent-text:#fff;--accent-ink:#a99dff;--ok:#4ade80;--warn:#f5b942;--danger:#ff7070;--warn-soft:rgba(245,185,66,.13)}
 @media(prefers-color-scheme:light){:root{color-scheme:light;--bg:#f5f6fa;--surface:#fff;--surface-2:#eef0f6;--border:#d7dbe6;--text:#151823;--muted:#525c72;--accent:#5a49d6;--accent-text:#fff;--accent-ink:#4837c4;--ok:#126a30;--warn:#8f5a00;--danger:#c42b2b;--warn-soft:rgba(143,90,0,.1)}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:6px 0 26px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:30px;line-height:1.1;letter-spacing:-.02em;color:var(--accent-ink)}
+.stat span{color:var(--muted);font-size:14.5px}
+.bars{margin:18px 0 6px}
+.bar{display:grid;grid-template-columns:minmax(120px,190px) 1fr 104px;gap:12px;align-items:center;margin:10px 0;font-size:15.5px}
+.bar .track{height:22px;background:var(--surface-2);border-radius:6px;overflow:hidden}
+.bar .fill{height:100%;background:var(--accent);border-radius:6px}
+.bar.hi .fill{background:var(--muted)}
+.bar .amt{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.fine{color:var(--muted);font-size:14px}
+@media(max-width:560px){.bar{grid-template-columns:1fr 96px}.bar .track{grid-column:1/-1;order:3}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -53,16 +65,39 @@ a{color:var(--accent-ink)}
 <div class="wrap">
 <header class="top">
   <span class="brand"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path d="M64 12 109 38 64 64 19 38Z" fill="#a99dff"/><path d="M19 38 64 64V116L19 90Z" fill="#5a49d6"/><path d="M109 38 64 64V116L109 90Z" fill="#7a6cf0"/><rect x="59" y="82" width="10" height="16" rx="5" fill="#fff"/></svg><span><i>the</i>Box</span></span>
-  <nav aria-label="Main"><a href="#what">What it is</a><a href="#asks">How it asks</a><a href="#data">Your data</a><a href="#download">Download</a><a href="#honest">Limits</a><a href="recipes/">Recipes</a></nav>
+  <nav aria-label="Main"><a href="#cost">Cost</a><a href="#what">What it is</a><a href="#asks">How it asks</a><a href="#data">Your data</a><a href="#download">Download</a><a href="#honest">Limits</a><a href="recipes/">Recipes</a></nav>
 </header>
 
 <main>
 <div class="hero">
   <h1>Teach it a recipe. It does the work.</h1>
-  <p class="lede">theBox is a personal assistant that works on your computer and always asks before it acts. Pull data from your CRM and fill it into another platform, or watch visitors on your site as they arrive: describe the job, or install a recipe that already knows how. theBox plans the steps, does the work (reading your files, running code, writing the report) and stops to ask you before anything sensitive. Free to download and use. You choose the model that does the thinking.</p>
+  <p class="lede">theBox is a personal assistant that does real work on your computer: pull data from your CRM into another platform, watch visitors on your site, file and report. It always asks before it acts, and it runs on the model <em>you</em> choose, including cheap ones that cost about a sixth of a flagship.</p>
+  <div class="stats">
+    <div class="stat"><b>about 1/6</b><span>the model cost of a flagship API, using a low-cost model in your own AWS account</span></div>
+    <div class="stat"><b>$0</b><span>per task on a model that runs on your own computer</span></div>
+    <div class="stat"><b>Your account</b><span>on Bedrock, prompts stay in your own AWS account and the model's maker never sees them</span></div>
+  </div>
   <a class="btn" href="#download">Download for Linux, Mac or Windows</a>
   <a class="btn alt" href="#asks">How it asks permission</a>
 </div>
+
+<section id="cost">
+  <h2>Pay a fraction of the usual AI bill</h2>
+  <p>Most assistants lock you into one expensive model. theBox lets you pick, per task, a model on your own computer (no per-use cost) or any model in your own AWS Bedrock account, so everyday jobs run on a low-cost model and only the hard ones need a flagship.</p>
+  <p><strong>A heavy month: 50 million tokens in, 5 million out.</strong> That is a lot of daily use.</p>
+  <div class="bars" role="img" aria-label="Monthly model cost: about 43 to 54 dollars for Kimi on Bedrock, 300 dollars for Claude Opus 5.5, zero for a local model">
+    <div class="bar"><span>Model on your computer</span><div class="track"><div class="fill" style="width:1%"></div></div><span class="amt">$0</span></div>
+    <div class="bar"><span>Kimi on AWS Bedrock</span><div class="track"><div class="fill" style="width:18%"></div></div><span class="amt">$43 to $54</span></div>
+    <div class="bar hi"><span>Claude Opus 5.5</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="amt">$300</span></div>
+  </div>
+  <p class="fine">List prices per million tokens, input / output: Kimi K2 Thinking on Bedrock $0.60 / $2.50 up to Kimi K2.5 at $0.72 / $3.60 (the range reflects model version and region); Claude Opus 5.5 $4 / $20. Totals are 50M x input + 5M x output. Prices checked November 2026 from public price trackers, not AWS's own pages, and they change: confirm in your region before you rely on them. Model fees only; the cloud options also need your own AWS account.</p>
+  <div class="note"><b>Cheaper is not the same as equal.</b>A flagship model is likely better at hard, multi-file work. theBox lets you start cheap and move one recipe to a stronger model when it needs it, without changing anything else. Our own recipe-by-recipe quality comparison is not published yet.</div>
+  <div class="grid" style="margin-top:18px">
+    <div class="card"><h3>You set the ceiling</h3><p>The cloud is off until you turn it on, and you pick the model each task may use. Local-only keeps everything on your computer.</p></div>
+    <div class="card"><h3>Your account, your data</h3><p>With Bedrock, prompts stay in your AWS account. AWS says it does not use them to train models and the model's maker gets no access to them.</p></div>
+    <div class="card"><h3>No lock-in</h3><p>One app, many models. When a better or cheaper one ships, switch it in Settings.</p></div>
+  </div>
+</section>
 
 <section id="what">
   <h2>What it is</h2>
