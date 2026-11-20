@@ -11,42 +11,42 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="description" content="theBox is a free desktop assistant. You describe a job, it plans and does the work on your computer, and it asks before anything sensitive. Use a model on your own computer or in your own AWS account. Linux download.">
 <style>
-:root{--bg:#fafaf7;--card:#fff;--ink:#17191c;--mute:#5b6470;--line:#e4e4de;--accent:#5a49d6;--accent-ink:#fff;--warn-bg:#fff6e0;--warn-line:#e9c46a;--code:#f0f0ea}
-@media(prefers-color-scheme:dark){:root{--bg:#101215;--card:#171a1f;--ink:#eceef1;--mute:#98a1ad;--line:#272c33;--accent:#a99dff;--accent-ink:#0b0d10;--warn-bg:#2a2412;--warn-line:#7a6320;--code:#1e2228}}
+:root{color-scheme:dark;--bg:#0b0d12;--surface:#12151d;--surface-2:#1a1e29;--border:#2a3040;--text:#e9ebf2;--muted:#9ba4b8;--accent:#7062ec;--accent-text:#fff;--accent-ink:#a99dff;--ok:#4ade80;--warn:#f5b942;--danger:#ff7070;--warn-soft:rgba(245,185,66,.13)}
+@media(prefers-color-scheme:light){:root{color-scheme:light;--bg:#f5f6fa;--surface:#fff;--surface-2:#eef0f6;--border:#d7dbe6;--text:#151823;--muted:#525c72;--accent:#5a49d6;--accent-text:#fff;--accent-ink:#4837c4;--ok:#126a30;--warn:#8f5a00;--danger:#c42b2b;--warn-soft:rgba(143,90,0,.1)}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 .wrap{max-width:880px;margin:0 auto;padding:0 20px}
 header.top{padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .brand{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:20px;letter-spacing:-.01em}.brand i{font-style:normal;font-weight:500}.brand svg{width:30px;height:30px}
-nav a{color:var(--mute);text-decoration:none;margin-left:18px;font-size:15px}
-nav a:hover{color:var(--ink)}
+nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:15px}
+nav a:hover{color:var(--text)}
 .hero{padding:56px 0 36px}
 h1{font-size:clamp(30px,5.5vw,46px);line-height:1.12;letter-spacing:-.02em;margin:0 0 18px}
-.lede{font-size:20px;color:var(--mute);max-width:660px;margin:0 0 28px}
-.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:12px 20px;border-radius:9px;text-decoration:none;font-weight:600;margin:0 10px 10px 0}
-.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
-section{padding:34px 0;border-top:1px solid var(--line)}
+.lede{font-size:20px;color:var(--muted);max-width:660px;margin:0 0 28px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-text);padding:12px 20px;border-radius:9px;text-decoration:none;font-weight:600;margin:0 10px 10px 0}
+.btn.alt{background:transparent;color:var(--text);border:1px solid var(--border)}
+section{padding:34px 0;border-top:1px solid var(--border)}
 h2{font-size:25px;letter-spacing:-.01em;margin:0 0 14px}
 h3{font-size:17px;margin:0 0 4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
-.card p{margin:0;color:var(--mute);font-size:15.5px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
 ol.steps{padding-left:22px}ol.steps li{margin:8px 0}
-table{width:100%;border-collapse:collapse;font-size:15.5px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-th,td{padding:10px 14px;text-align:left;border-top:1px solid var(--line);vertical-align:top}
-thead th{border-top:0;color:var(--mute);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+table{width:100%;border-collapse:collapse;font-size:15.5px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+th,td{padding:10px 14px;text-align:left;border-top:1px solid var(--border);vertical-align:top}
+thead th{border-top:0;color:var(--muted);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.05em}
 code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
-code{background:var(--code);padding:1px 6px;border-radius:5px}
-pre{background:var(--code);padding:12px 14px;border-radius:9px;overflow-x:auto;margin:8px 0}
+code{background:var(--surface-2);padding:1px 6px;border-radius:5px}
+pre{background:var(--surface-2);padding:12px 14px;border-radius:9px;overflow-x:auto;margin:8px 0}
 pre code{padding:0;background:none}
-.note{background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:12px;padding:14px 18px;margin:18px 0}
+.note{background:var(--warn-soft);border:1px solid var(--warn);border-radius:12px;padding:14px 18px;margin:18px 0}
 .note b{display:block;margin-bottom:4px}
-.dl a{color:var(--accent);font-weight:600}
-.test{display:inline-block;background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:6px;padding:0 7px;font-size:12px;font-weight:600;margin-left:4px;white-space:nowrap}
-footer{padding:30px 0 50px;color:var(--mute);font-size:14.5px;border-top:1px solid var(--line)}
-a{color:var(--accent)}
-:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+.dl a{color:var(--accent-ink);font-weight:600}
+.test{display:inline-block;color:var(--warn);background:var(--warn-soft);border:1px solid var(--warn);border-radius:6px;padding:0 7px;font-size:12px;font-weight:600;margin-left:4px;white-space:nowrap}
+footer{padding:30px 0 50px;color:var(--muted);font-size:14.5px;border-top:1px solid var(--border)}
+a{color:var(--accent-ink)}
+:focus-visible{outline:3px solid var(--accent-ink);outline-offset:2px;border-radius:4px}
 </style>
 </head>
 <body>
@@ -131,21 +131,21 @@ a{color:var(--accent)}
       <tr><td>Windows 64-bit, portable <span class="test">untested build</span></td><td><a href="https://github.com/opaq-ai/getTheBox/releases/download/v0.4.0/theBox-0.4.0-win-x64.zip">theBox-0.4.0-win-x64.zip</a></td></tr>
     </tbody>
   </table>
-  <p style="color:var(--mute);font-size:15.5px">The files are large (180 to 550 MB) because they include the engines for several graphics cards. They do not include a language model. <b>Linux is the tested build.</b> The Mac and Windows builds are for testers: they were built on Linux and have never been run on a real Mac or Windows computer, and none of the builds is code-signed. 0.4.0 upgrades an installed 0.2.x on Linux and keeps your settings.</p>
+  <p style="color:var(--muted);font-size:15.5px">The files are large (180 to 550 MB) because they include the engines for several graphics cards. They do not include a language model. <b>Linux is the tested build.</b> The Mac and Windows builds are for testers: they were built on Linux and have never been run on a real Mac or Windows computer, and none of the builds is code-signed. 0.4.0 upgrades an installed 0.2.x on Linux and keeps your settings.</p>
 
   <h3 style="margin-top:22px">Install on Linux</h3>
   <pre><code>sudo apt install ./theBox-0.4.0-linux-amd64.deb
 # or the AppImage:
 chmod +x theBox-0.4.0-linux-x86_64.AppImage
 ./theBox-0.4.0-linux-x86_64.AppImage</code></pre>
-  <p style="color:var(--mute);font-size:15.5px">On Ubuntu 24.04 and later the AppImage may fail to start because of the system's sandbox restrictions; use the <code>.deb</code>, or run the AppImage with <code>--no-sandbox</code>. A model on your computer needs working Vulkan or CUDA graphics drivers.</p>
+  <p style="color:var(--muted);font-size:15.5px">On Ubuntu 24.04 and later the AppImage may fail to start because of the system's sandbox restrictions; use the <code>.deb</code>, or run the AppImage with <code>--no-sandbox</code>. A model on your computer needs working Vulkan or CUDA graphics drivers.</p>
 
   <h3 style="margin-top:22px">Install on macOS (testers)</h3>
   <ol class="steps">
     <li>Unzip, then drag <b>theBox</b> into Applications.</li>
     <li>The app is not signed, so macOS will say it is damaged. Run this once in Terminal, then open it: <pre><code>xattr -cr /Applications/theBox.app</code></pre></li>
   </ol>
-  <p style="color:var(--mute);font-size:15.5px">The script sandbox for recipes has never been run on macOS, so recipe scripts are not network-isolated there.</p>
+  <p style="color:var(--muted);font-size:15.5px">The script sandbox for recipes has never been run on macOS, so recipe scripts are not network-isolated there.</p>
 
   <h3 style="margin-top:22px">Install on Windows (testers)</h3>
   <ol class="steps">
@@ -190,7 +190,7 @@ shasum -a 256 theBox-0.2.1-mac-arm64.zip   # macOS</code></pre>
   <h2>Honest limits</h2>
   <div class="note"><b>Version 0.3.0 is the first release of the new assistant.</b>
     It works end to end with a cloud model on Linux, and the permission system, activity log, task history and recipe installing are in place. The installers are not code-signed, and the Mac and Windows builds have never been run on a real machine.</div>
-  <ul style="color:var(--mute);font-size:15.5px">
+  <ul style="color:var(--muted);font-size:15.5px">
     <li>The recipe store is not open yet, and the ratings, review and reviewer pages show sample data.</li>
     <li>Models on your computer have not yet been tested in the new assistant, and the document-analysis tool from 0.2 is not connected to it.</li>
     <li>Recipe scripts run in a Linux sandbox with no network access. On macOS the sandbox has never been run; on Windows scripts are refused, and several permission tests fail, so use Windows for testing only.</li>
